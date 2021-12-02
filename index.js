@@ -19,12 +19,12 @@ function serviceUnavailable(){
 function sendEmail() {
 	Email.send({
 	Host: "smtp.gmail.com",
-	Username : "kuldeepkaur5070@gmail.com",
-	Password : "Waheguru11",
-	To : 'punjab5070@gmail.com',
-	From : "kuldeepkaur5070@gmail.com",
-	Subject : "Using js",
-	Body : "Hi aniket",
+	Username : "sender's email",
+	Password : "password",
+	To : 'receiver email',
+	From : "sender's email",
+	Subject : "subject",
+	Body : "message",
 	}).then(
 		message => alert("Email Sent Successfully.")
 	);
