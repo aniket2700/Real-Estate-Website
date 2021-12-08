@@ -8,10 +8,6 @@ const lowerCaseLetters = /[a-z]/g;
 const upperCaseLetters = /[A-Z]/g;
 const numbers = /[0-9]/g;
 
-var userArray = new Array();
-var passArray = new Array();
-var emailArray = new Array();
-
 function serviceUnavailable(){
     alert('Service Unavailable');
 }
@@ -30,15 +26,30 @@ function sendEmail() {
 	);
 }
 
-function login(){
-
-}	
+function loginuser(){
+	if(loguser.value=="aniket2021" && logpass.value=="Aniket11")
+	{
+		alert("Login Successful...");
+	}
+	else if(loguser.value=="" && logpass.value=="Aniket11"){
+		alert("Username field cannot be empty...")
+	}
+	else if(loguser.value=="aniket2021" && logpass.value==""){
+		alert("Password field cannot be empty...");
+	}
+	else if(loguser.value=="aniket2021" && logpass.value!="Aniket11"){
+		alert("Incorrect Password...");
+	}
+	else if(loguser.value!="aniket2021" && logpass.value=="Aniket11"){
+		alert("Incorrect Username...");
+	}
+	else{
+		alert("Username and Password must be filled...");
+	}
+}		
 
 function register(){
 	if(checkUsername() && checkPassword() && checkEmail()){
-		userArray.push(reguser.value);
-		passArray.push(regpass.value);
-		emailArray.push(regemail.value);
 		alert("Registered Successfully...");
 		window.location.href = "login.html";
 	}
