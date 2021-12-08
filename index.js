@@ -1,28 +1,31 @@
-var user = document.getElementById("logusername");
-var pass = document.getElementById("logpassword");
+var loguser = document.getElementById("logusername");
+var logpass = document.getElementById("logpassword");
 var regemail = document.getElementById("regemail");
 var reguser = document.getElementById("regusername");
 var regpass = document.getElementById("regpassword");
 var regcompass = document.getElementById("regcompass");
+var logbtn = document.getElementById("userlogo");
 const lowerCaseLetters = /[a-z]/g;
 const upperCaseLetters = /[A-Z]/g;
 const numbers = /[0-9]/g;
 
+var login = false;
+
 function serviceUnavailable(){
-    alert('Service Unavailable');
+    alert('Service Unavailable...');
 }
 
 function sendEmail() {
 	Email.send({
 	Host: "smtp.gmail.com",
-	Username : "sender's email",
-	Password : "password",
+	Username : "sender email",
+	Password : "sender password",
 	To : 'receiver email',
-	From : "sender's email",
-	Subject : "subject",
-	Body : "message",
+	From : "sender email",
+	Subject : "Using js",
+	Body : "Hi",
 	}).then(
-		message => alert("Email Sent Successfully.")
+		message => alert("Email Sent Successfully...")
 	);
 }
 
@@ -46,11 +49,11 @@ function loginuser(){
 	else{
 		alert("Username and Password must be filled...");
 	}
-}		
+}	
 
 function register(){
 	if(checkUsername() && checkPassword() && checkEmail()){
-		alert("Registered Successfully...");
+		alert("User Registered Successfully...");
 		window.location.href = "login.html";
 	}
 }
